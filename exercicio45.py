@@ -1,41 +1,56 @@
 '''
- Elabore um programa que calcule o valor a ser pago por um produto, considerando o seu preço normal e condição de pagamento:
-
-– à vista dinheiro/cheque: 10% de desconto
-
-– à vista no cartão: 5% de desconto
-
-– em até 2x no cartão: preço formal
-
-– 3x ou mais no cartão: 20% de juros
+Crie um programa que faça o computador jogar Jokenpô com você.
 '''
+from random import randint
+from time import sleep
+itens = ('Pedra', 'Papel', 'Tesoura')
+computador = randint(0, 2)
+print('{:=^22}'.format(' Jokenpô '))
+print('''Suas opções:
+[ 0 ] Pedra
+[ 1 ] Papel
+[ 2 ] Tesoura''')
+jogador = int(input('Qual a sua jogada? '))
+print('-=' * 11)
+print('Computador jogou {}'.format(itens[computador]))
+print('Jogador jogou {}'.format(itens[jogador]))
+print('-=' * 11)
+print('Jo')
+sleep(1)
+print('ken')
+sleep(1)
+print('pô!!!')
+sleep(1)
+if computador == 0: #computador jogou Pedra
+    if jogador == 0:
+        print('Empate')
+    elif jogador == 1:
+        print('Jogador Vence')
+    elif jogador == 2:
+        print('Jogador vence')
+    else:
+        print('Jogada inválida!')
 
-print(' {:=^40}'.format(' Lojas Vasconcelos '))
-preço = float(input('Preço das compras: R$'))
-print('''' FOrmas de Pagamento
-[ 1 ] á vista dinheiro/cheque
-[ 2 ] á vista cartão de crédito
-[ 3 ] 2x no cartão de crédito
-[ 4 ] 3x ou mais no cartão de crédito
-''')
-opção = int(input('Qual é a opção? '))
-if opção == 1:
-    total = preço - ( preço * 10 / 100)
-elif opção == 2:
-    total = preço - ( preço * 5 / 100)
-elif opção == 3:
-    total = preço
-    parcela = total / 2
-    print('Sua compra será parcelada em 2x de R${:.2f} sem juros.'.format(preço, total))
-elif opção == 4:
-    total = preço + (preço * 20 /100)
-    totalparc = int(input('Quantas parcelas: '))
-    parcela = total / totalparc
-    print('Sua compra será parcelada em {}x de R${:.2f} com juros.'.format(totalparc, parcela))
-else:
-    total = 0
-    print('Opção inválida de pagamento. Tenete novamente!')
-print('Sua compra de R${:.2f} vai custar R${:.2f} no final'.format(preço, total))
+elif computador == 1: # computador jogou Papel
+    if jogador == 0:
+        print('Computador Vence')
+    elif jogador == 1:
+        print('Empate')
+    elif jogador == 2:
+        print('Jogador Vence')
+    else:
+        print('Jogada inválida!')
+
+elif computador == 2: # computador jogou Tesoura
+    if jogador == 0:
+        print('Jogador Vence')
+    elif jogador == 1:
+        print('Computador Vence')
+    elif jogador == 2:
+        print('Empate')
+    else:
+        print('Jogada inválida!')
+
 
 
 
